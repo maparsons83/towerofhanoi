@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.rod {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 100px;
+    height: 500px;
+    background: black;
+    margin: 100px;
+}
+
+.xlarge {
+    width: 100%;
+    height: 25px;
+    background: red;
+}
+
+.large {
+    width: 80%;
+    height: 25px;
+    background: blue;
+}
+
+.medium {
+    width: 60%;
+    height: 25px;
+    background: yellow;
+}
+
+.small {
+    width: 40%;
+    height: 25px;
+    background: orange;
+}
