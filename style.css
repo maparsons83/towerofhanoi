@@ -14,25 +14,25 @@
 }
 
 .xlarge {
-    width: 100%;
+    width: 90px;
     height: 25px;
     background: red;
 }
 
 .large {
-    width: 80%;
+    width: 70px;
     height: 25px;
     background: blue;
 }
 
 .medium {
-    width: 60%;
+    width: 50px;
     height: 25px;
     background: yellow;
 }
 
 .small {
-    width: 40%;
+    width: 30px;
     height: 25px;
     background: orange;
 }
