@@ -2,6 +2,7 @@ var rods = document.querySelectorAll('.rod');
 var startPieces = ['xlarge', 'large', 'medium', 'small'];
 var runFirstClick = true;
 
+
 // define variable for object widths
 // 
 
@@ -19,12 +20,33 @@ function firstClick(rod) {
 }
 
 function secondClick(event) {
-    console.log("second");
     let rod = event.currentTarget;
     // let test = document.getElementById(rod);
     let button = bucket.firstChild;
-    rod.appendChild(button);
-    runFirstClick = true;
+
+    if (rod.childElementCount !== 0) {
+        console.log('it works')
+        var lastDisc = rod.lastElementChild.id;
+        var placedRod = startPieces.indexOf(lastDisc);
+        var bucketDisc = bucket.lastElementChild.id;
+        var placedPiece = startPieces.indexOf(bucketDisc);
+    
+        if (placedRod > placedPiece) {
+            console.log("hello")
+            return;
+        } else {
+            rod.appendChild(button);
+            runFirstClick = true;
+        }
+    
+
+       
+        } else {
+            rod.appendChild(button);
+            runFirstClick = true;
+            console.log(rod.lastElementChild.id);
+        }
+    checkWin();      
 }
 
 
@@ -36,7 +58,7 @@ function startGame() {
 
     for (let i = 0; i < startPieces.length; i++) {
         var start = document.createElement('div');
-        start.classList.add(startPieces[i], 'discs');
+        start.id = startPieces[i];
         destination.appendChild(start);
 
     }
@@ -44,6 +66,10 @@ function startGame() {
 
 
 }
+
+
+
+
 
 
 function click(event) {
@@ -70,5 +96,11 @@ function eventListeners() {
     }
 
 
+}
+
+function checkWin() {
+    if (r2.childElementCount === 4 || r3.childElementCount === 4 ) {
+        alert("You Win!");
+    }
 }
 eventListeners();
